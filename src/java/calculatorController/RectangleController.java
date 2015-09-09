@@ -19,7 +19,7 @@ import RectangleModel.RectangleCalcService;
  *
  * @author Keiji
  */
-@WebServlet(name = "CalcController", urlPatterns = {"/AllCalculator"})
+@WebServlet(name = "CalcController", urlPatterns = {"/Calculator"})
 public class RectangleController extends HttpServlet {
     private static final String RESULT_PAGE = "/areaResult.jsp";
 
