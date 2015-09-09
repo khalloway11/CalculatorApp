@@ -3,25 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calculatorController;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import RectangleModel.RectangleCalcService;
 
 /**
  *
  * @author Keiji
  */
-@WebServlet(name = "CalcController", urlPatterns = {"/Calculator"})
-public class RectangleController extends HttpServlet {
-    private static final String RESULT_PAGE = "/areaResult.jsp";
+@WebServlet(urlPatterns = {"/AllCalculators"})
+public class AllCalculatorsController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,21 +31,18 @@ public class RectangleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        double length, width;
-        try{
-            length = Double.parseDouble(request.getParameter("length"));
-            width = Double.parseDouble(request.getParameter("width"));
-        } catch (Exception e){
-            length = 0; width = 0;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet AllCalculatorsController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet AllCalculatorsController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        
-        RectangleCalcService rec = new RectangleCalcService(width, length);
-        request.setAttribute("length", length);
-        request.setAttribute("width", width);
-        request.setAttribute("area", rec.calculateArea());
-        
-        RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
-        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
