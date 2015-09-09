@@ -15,22 +15,24 @@
         <table>
             <tr>
                 <td>
-                    <form>
+                    <form name="rectangleForm" action="/AllCalculator">
                         <input type="text" id="recLengthInput" name="recLength" placeholder="Enter the length"><br/>
                         <input type="text" id="recHeightInput" name="recHeight" placeholder="Enter the width"><br/>
                         <input type="submit" value="Submit">
                     </form>
                 </td>
                 <td>
-                    <form>
+                    <form name="circleForm" action="/AllCalculator">
                         <input type="text" id="radiusInput" name="radius" placeholder="Enter the radius"><br/>
                         <input type="submit" value="Submit">
                     </form>
                 </td>
                 <td>
-                    <input type="text" id="triLengthInput" name="triLength" placeholder="Enter the length"><br/>
-                    <input type="text" id="triHeightInput" name="triHeight" placeholder="Enter the width"><br/>
-                    <input type="submit" value="Submit">
+                    <form name="triangleForm" action="/AllCalculator">
+                        <input type="text" id="triLengthInput" name="triLength" placeholder="Enter the length"><br/>
+                        <input type="text" id="triHeightInput" name="triHeight" placeholder="Enter the width"><br/>
+                        <input type="submit" value="Submit">
+                    </form>
                 </td>
             </tr>
             <tr>
