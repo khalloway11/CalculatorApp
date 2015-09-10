@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form id="rectangleForm" name="rectangleForm" method="POST" action="Calculator">
+        <form id="rectangleForm" name="rectangleForm" method="POST" action="../Calculator">
             <input type="text" id="lengthInput" name="length" placeholder="Enter the length"><br/>
             <input type="text" id="widthInput" name="width" placeholder="Enter the length"><br/>
             <input id="rectSubmit" type="submit" value="Submit"><br/>

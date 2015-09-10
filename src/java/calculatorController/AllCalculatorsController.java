@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "AllCalculatorsController", urlPatterns = {"/AllCalculators"})
 public class AllCalculatorsController extends HttpServlet {
-    private static final String RESULT_PAGE = "/AllCalculators.jsp";
+    private static final String RESULT_PAGE = "/Part3/AllCalculators.jsp";
     private CalculatorService calc;
 
     /**
