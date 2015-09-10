@@ -15,20 +15,20 @@
         <table>
             <tr>
                 <td>
-                    <form name="rectangleForm" action="/AllCalculator">
+                    <form id="rectangleForm" name="rectangleForm" method="POST" action="AllCalculator">
                         <input type="text" id="recLengthInput" name="recLength" placeholder="Enter the length"><br/>
                         <input type="text" id="recHeightInput" name="recHeight" placeholder="Enter the width"><br/>
                         <input type="submit" value="Submit">
                     </form>
                 </td>
                 <td>
-                    <form name="circleForm" action="/AllCalculator">
+                    <form id="circleForm" name="circleForm" method="POST" action="AllCalculator">
                         <input type="text" id="radiusInput" name="radius" placeholder="Enter the radius"><br/>
                         <input type="submit" value="Submit">
                     </form>
                 </td>
                 <td>
-                    <form name="triangleForm" action="/AllCalculator">
+                    <form id="triangleForm" name="triangleForm" method="POST" action="AllCalculator">
                         <input type="text" id="triLengthInput" name="triLength" placeholder="Enter the length"><br/>
                         <input type="text" id="triHeightInput" name="triHeight" placeholder="Enter the width"><br/>
                         <input type="submit" value="Submit">

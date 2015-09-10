@@ -1,12 +1,11 @@
-package calculatorController;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package calculatorController;
 
-import Models.CalculatorService;
+import Models.RectangleCalcService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -20,10 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Keiji
  */
-@WebServlet(name = "AllCalculatorsController", urlPatterns = {"/AllCalculators"})
-public class AllCalculatorsController extends HttpServlet {
-    private static final String RESULT_PAGE = "/AllCalculators.jsp";
-    private CalculatorService calc;
+@WebServlet(name = "SamePageRectangleController", urlPatterns = {"/SamePageCalculator"})
+public class SamePageRectangleController extends HttpServlet {
+    private static final String RESULT_PAGE = "/areaSinglePage.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,13 +35,19 @@ public class AllCalculatorsController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
-        
+        double length, width;
         try{
-            String form = request.getParameter("rectangleForm");
-        } catch(Exception e){
-            
+            length = Double.parseDouble(request.getParameter("length"));
+            width = Double.parseDouble(request.getParameter("width"));
+        } catch (Exception e){
+            length = 0; width = 0;
         }
+        
+        RectangleCalcService rec = new RectangleCalcService(width, length);
+        request.setAttribute("area", rec.calculateArea());
+        
+        RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
+        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

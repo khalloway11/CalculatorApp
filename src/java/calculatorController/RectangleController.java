@@ -44,8 +44,6 @@ public class RectangleController extends HttpServlet {
         }
         
         RectangleCalcService rec = new RectangleCalcService(width, length);
-        request.setAttribute("length", length);
-        request.setAttribute("width", width);
         request.setAttribute("area", rec.calculateArea());
         
         RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
