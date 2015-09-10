@@ -7,6 +7,9 @@ package calculatorController;
  */
 
 import Models.CalculatorService;
+import Models.TriangleCalcService;
+import Models.CircleCalcService;
+import Models.RectangleCalcService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -38,12 +41,48 @@ public class AllCalculatorsController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
+        double area = 0;
+        String shape = "";
         
         try{
-            String form = request.getParameter("rectangleForm");
+            shape = request.getParameter("calculation");
+            switch(shape){
+                case "rectangle":
+                    String lengthStr = request.getParameter("recLength");
+                    String heightStr = request.getParameter("recHeight");
+                    if(lengthStr != null && heightStr != null){
+                        double length = Double.parseDouble(lengthStr);
+                        double height = Double.parseDouble(heightStr);
+                        calc = new RectangleCalcService(length, height);
+                    }
+                    break;
+                case "circle":
+                    String radiusStr = request.getParameter("radius");
+                    if(radiusStr != null){
+                        double radius = Double.parseDouble(radiusStr);
+                        calc = new CircleCalcService(radius);
+                    }
+                    break;
+                case "triangle":
+                    String triLengthStr = request.getParameter("triLength");
+                    String triHeightStr = request.getParameter("triHeight");
+                    if(triLengthStr != null && triHeightStr != null){
+                        double length = Double.parseDouble(triLengthStr);
+                        double height = Double.parseDouble(triHeightStr);
+                        calc = new TriangleCalcService(length, height);
+                    }
+                    break;
+            }
+            area = calc.calculateArea();
         } catch(Exception e){
-            
+            shape = "";
+            area = 0;
         }
+
+        request.setAttribute("shape", shape);
+        request.setAttribute("area", area);
+        
+        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
