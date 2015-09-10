@@ -40,7 +40,10 @@ public class AllCalculatorsController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
+        String rootPath = request.getContextPath();
+        RequestDispatcher view = request.getRequestDispatcher(rootPath + RESULT_PAGE);
+        PrintWriter out = response.getWriter();
+        out.println(rootPath + RESULT_PAGE);
         double area = 0;
         String shape = "";
         
