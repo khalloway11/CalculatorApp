@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Keiji
  */
-@WebServlet(urlPatterns = {"/AllCalculators"})
+@WebServlet(name = "AllCalculatorsController", urlPatterns = {"/AllCalculators"})
 public class AllCalculatorsController extends HttpServlet {
     private static final String FORM_PAGE = "/AllCalculators.jsp";
     private CalculatorService calc;
