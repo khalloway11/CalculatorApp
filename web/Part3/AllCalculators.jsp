@@ -39,19 +39,8 @@
         </div>
         <div class="row">
             <div class="container">
-                <%
-                    Object AreaResult = request.getAttribute("area");
-                    Object ShapeResult = request.getAttribute("shape");
-                    String shape = "shape ";
-                    double area = 0;
-                    if(AreaResult != null){
-                        area = (Double)AreaResult;
-                    }
-                    if(ShapeResult != null){
-                        shape += (String)ShapeResult;
-                    }
-                %>
-                <h1>The area of the <%=shape %> is: <%=area %></h1>
+                
+                <h1>The area of the ${shape} is: ${area}</h1>
             </div>
         </div>
 

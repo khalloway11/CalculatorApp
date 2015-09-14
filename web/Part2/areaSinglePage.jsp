@@ -20,13 +20,7 @@
             <input type="text" id="widthInput" name="width" placeholder="Enter the length"><br/>
             <input id="rectSubmit" type="submit" value="Submit"><br/>
         </form>
-        <%
-            Object AreaResult = request.getAttribute("area");
-            double area = 0;
-            if(AreaResult != null){
-                area = (Double)AreaResult;
-            }
-            %>
-        <h3>The area is: </h3><%=area %>
+
+        <h3>The area is: </h3>${area}
     </body>
 </html>

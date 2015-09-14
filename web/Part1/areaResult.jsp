@@ -12,14 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            Object AreaResult = request.getAttribute("area");
-            double area = 0;
-            if(AreaResult != null){
-                area = (Double)AreaResult;
-            }
-            %>
-        <h3>The area is:</h3>
-        <%=area %>
+        <h3>The area is:</h3> ${area}
     </body>
 </html>

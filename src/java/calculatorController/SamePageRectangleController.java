@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "SamePageRectangleController", urlPatterns = {"/SamePageCalculator"})
 public class SamePageRectangleController extends HttpServlet {
-    private static final String RESULT_PAGE = "/Part2/areaSinglePage.jsp";
+    private static final String RESULT_PAGE = "Part2/areaSinglePage.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

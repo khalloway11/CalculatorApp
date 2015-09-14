@@ -21,7 +21,7 @@ import Models.RectangleCalcService;
  */
 @WebServlet(name = "CalcController", urlPatterns = {"/Calculator"})
 public class RectangleController extends HttpServlet {
-    private static final String RESULT_PAGE = "/Part1/areaResult.jsp";
+    private static final String RESULT_PAGE = "Part1/areaResult.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
